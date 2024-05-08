@@ -1,0 +1,15 @@
+server:
+  port: 8888
+  forward-headers-strategy: framework
+  error:
+    include-message: always
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: readxml
+      #      username:
+      #      password:
+      authentication-database: ${spring.data.mongodb.database}
