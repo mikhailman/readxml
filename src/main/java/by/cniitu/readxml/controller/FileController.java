@@ -30,13 +30,13 @@
 ////
 //    public static void main(String[] args) {
 //
-//
-//        Path testFilePath = Paths.get("D:\\workspase\\cniitu\\aaa.xml");
+//        Path testFilePath = Paths.get("D:\\workspase\\cniitu\\123.xml");
 //        Path fileName = testFilePath.getFileName();
 //        System.out.println(fileName.getRoot());
+//        System.out.println(fileName.getName(0));
 //
 //
-//        File xmlFile = new File("D:\\workspase\\cniitu\\aaa.xml");
+//        File xmlFile = new File("D:\\workspase\\cniitu\\123.xml");
 //        JAXBContext jaxbContext;
 //
 //        try {

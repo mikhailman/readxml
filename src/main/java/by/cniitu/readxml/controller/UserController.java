@@ -16,6 +16,9 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
+
+    // swagger - http://localhost:8888/webjars/swagger-ui/index.html
+
     private final XmlParser xmlParser;
     private final UserService userService;
 
@@ -63,47 +66,50 @@ public class UserController {
     @GetMapping
     public Flux<User> getUser() {
 
-        String xmlString = """
-                <users>
-                    <user id="1">
-                        <personalinfo>
-                            <firstname>John</firstname>
-                            <lastname>Doe</lastname>
-                            <email>john.doe@example.com</email>
-                            <dateofbirth>1990-01-01</dateofbirth>
-                            <gender>Male</gender>
-                        </personalinfo>
-                        <contactinfo>
-                            <phonenumber>+1234567890</phonenumber>
-                            <address>
-                                <street>123 Main St</street>
-                                <city>New York</city>
-                                <state>NY</state>
-                                <postalcode>10001</postalcode>
-                                <country>USA</country>
-                            </address>
-                        </contactinfo>
-                        <employment>
-                            <companyname>Example Corp</companyname>
-                            <position>Software Engineer</position>
-                            <startdate>2015-06-01</startdate>
-                            <enddate>Present</enddate>
-                        </employment>
-                        <education>
-                            <universityname>Example University</universityname>
-                            <degree>Bachelor's in Computer Science</degree>
-                            <graduationyear>2014</graduationyear>
-                        </education>
-                        <skills>
-                            <skill>Java</skill>
-                            <skill>Spring Boot</skill>
-                            <skill>MongoDB</skill>
-                            <skill>REST API</skill>
-                        </skills>
-                    </user>
-                </users>
-                                
-                """;
+
+
+        String xmlString = "D:\\workspase\\cniitu\\123.xml";
+//        String xmlString = """
+//                <users>
+//                    <user id="1">
+//                        <personalinfo>
+//                            <firstname>John</firstname>
+//                            <lastname>Doe</lastname>
+//                            <email>john.doe@example.com</email>
+//                            <dateofbirth>1990-01-01</dateofbirth>
+//                            <gender>Male</gender>
+//                        </personalinfo>
+//                        <contactinfo>
+//                            <phonenumber>+1234567890</phonenumber>
+//                            <address>
+//                                <street>123 Main St</street>
+//                                <city>New York</city>
+//                                <state>NY</state>
+//                                <postalcode>10001</postalcode>
+//                                <country>USA</country>
+//                            </address>
+//                        </contactinfo>
+//                        <employment>
+//                            <companyname>Example Corp</companyname>
+//                            <position>Software Engineer</position>
+//                            <startdate>2015-06-01</startdate>
+//                            <enddate>Present</enddate>
+//                        </employment>
+//                        <education>
+//                            <universityname>Example University</universityname>
+//                            <degree>Bachelor's in Computer Science</degree>
+//                            <graduationyear>2014</graduationyear>
+//                        </education>
+//                        <skills>
+//                            <skill>Java</skill>
+//                            <skill>Spring Boot</skill>
+//                            <skill>MongoDB</skill>
+//                            <skill>REST API</skill>
+//                        </skills>
+//                    </user>
+//                </users>
+//
+//                """;
 
         return xmlParser.parseXmlFile(xmlString);
     }
